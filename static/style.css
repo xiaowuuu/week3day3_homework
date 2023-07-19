@@ -1,5 +1,7 @@
 form {
     border-style: solid;
-    height: 300px;
-    
+    height: 400px;
+    width: 500px;
+    margin: 10px;
+    padding: 20px;
 }

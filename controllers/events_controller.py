@@ -11,7 +11,7 @@ def index():
     return render_template("index.jinja", title="Events Page", event_list = events)
 
 # create a new event
-@events_blueprint.route("/events", methods=["POST"])
+@events_blueprint.route("/events", methods=["POST","GET"])
 def create_event():
     # get the fields from the form
     name = request.form["name"]
@@ -19,7 +19,7 @@ def create_event():
     location = request.form["location"]
     number_of_guest = request.form["num_of_guest"]
     description = request.form["description"]
-    recurring = request.form.get_json["recurring"]
+    recurring = request.form.get("recurring")
     # create the new event using the fields
     new_event = Event(name, date, number_of_guest, location, description, recurring)
     # add the new event to the list events
